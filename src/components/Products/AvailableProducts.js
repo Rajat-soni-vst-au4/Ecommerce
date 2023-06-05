@@ -1,36 +1,30 @@
-import React from 'react'
-import { Container, Row, Button, Col } from 'react-bootstrap'
+import React, {useContext, useEffect} from "react";
+import CartContext from '../Store/CartContext';
+import productsArr from "./ProductList";
 
-const productsArr = [
-    {
-        title: 'Colors',
-        price: 100,
-        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
-    },
-    {
-        title: 'Black and white Colors',
-        price: 50,
-        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
-    },
-    {
-        title: 'Yellow and Black Colors',
-        price: 70,
-        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
-    },
-    {
-        title: 'Blue Color',
-        price: 100,
-        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
-    }
-    ]
+import { Container, Row, Button, Col } from 'react-bootstrap';
+
 
 const AvailableProducts=()=>{
+
+const ctx = useContext(CartContext);
+
+  const btnClickHandler=(item)=>{
+    ctx.addItem({
+      id: item.title, // pass the item's id instead of generating a new one
+      name: item.title,
+      price: item.price,
+      image : item.imageUrl,
+      amount: Number(item.amount),
+    });
+  }
+
   return (
     <>
       <Container>
         <Row>
         {productsArr.map((item) => (
-            <Col key={item.title} xs={12} md={3}  lg={3}>
+            <Col key={item.title} id={item.id} xs={12} md={3}  lg={3}>
              
                 <h3>{item.title}</h3>
                 <div>
@@ -38,7 +32,7 @@ const AvailableProducts=()=>{
                 </div>
                 <div>
                   <span>${item.price}</span>
-                  <Button variant="primary">Add To Cart</Button>
+                  <Button variant="primary" onClick={()=>btnClickHandler(item)}>Add To Cart</Button>
                 </div>
              
             </Col>

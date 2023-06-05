@@ -1,4 +1,5 @@
-import {useState} from "react"
+import React, {useState} from "react";
+
 import './App.css';
 import "bootstrap/dist/js/bootstrap.js";
 import "bootstrap/dist/css/bootstrap.css";
@@ -6,6 +7,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import Cart from "./components/Cart/Cart"
 import Header from './components/Layout/Header';
 import AvailableProducts from './components/Products/AvailableProducts';
+import CartProvider from "./components/Store/CartProvider";
+
 
 function App() {
   const [cartIsShown, setCartIsShown]=useState(false);
@@ -18,11 +21,11 @@ function App() {
     setCartIsShown(false)
   }
   return (
-    <>
+    <CartProvider>
     {cartIsShown && <Cart onClose={hideCartHandler}/>}
       <Header onShowCart={showCartHandler}/>
     <AvailableProducts/>
-    </>
+    </CartProvider>
   );
 }
 
