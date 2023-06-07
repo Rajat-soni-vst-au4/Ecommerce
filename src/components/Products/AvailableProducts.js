@@ -24,7 +24,7 @@ const ctx = useContext(CartContext);
       <Container>
         <Row>
         {productsArr.map((item) => (
-            <Col key={item.title} id={item.id} xs={12} md={3}  lg={3}>
+            <Col key={item.title} id={item.id} xs={12} md={3}  lg={3} xl={3}>
              
                 <h3>{item.title}</h3>
                 <div>
