@@ -11,7 +11,7 @@ function Cart(props) {
   // console.log(ctx.items)
 
   const totalAmount=`$${ctx.totalAmount.toFixed(2)}`;
-  const hasItems=ctx.items.length > 0;
+  // const hasItems=ctx.items.length > 0;
 
   const cartItemRemoveHandler=(id)=>{
     ctx.removeItem(id);

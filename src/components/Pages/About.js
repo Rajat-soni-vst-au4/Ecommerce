@@ -1,11 +1,15 @@
 import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import aiImage from "../assests/Band Members1.png";
+import classes from "./Home.module.css";
 
 const About = () => {
   return (
+    <>
+        <h1 >The Generics</h1>
     <Container className="text-center">
-      <h1 className="h1-label">About Page</h1>
+      <h1 className='h1-label'>About</h1>
+      <div  className='Div1'>
       <Row>
         <Col>
           <Image
@@ -51,7 +55,10 @@ const About = () => {
           </p>
         </Col>
       </Row>
+      </div>
     </Container>
+    <h1 className={classes.bottom}>The Generics</h1>
+    </>
   );
 };
 
