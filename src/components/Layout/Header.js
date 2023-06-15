@@ -11,8 +11,9 @@ const Header=(props)=> {
             <Navbar.Brand href="#home"></Navbar.Brand>
                 <Nav className="me-auto">
                 <Nav.Link as={Link} to="/home">HOME</Nav.Link>
-                    <Nav.Link href="#store">STORE</Nav.Link>
+                    <Nav.Link as={Link} to="/">STORE</Nav.Link>
                     <Nav.Link as={Link} to="/about">ABOUT</Nav.Link>
+                    <Nav.Link as={Link} to="/contact">CONTACT US</Nav.Link>
                 </Nav>
             </Container>
             <HeaderCartButton onClick={props.onShowCart}/>

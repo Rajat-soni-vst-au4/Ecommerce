@@ -11,6 +11,7 @@ import AvailableProducts from './components/Products/AvailableProducts';
 import CartProvider from "./components/Store/CartProvider";
 import About from "./components/Pages/About";
 import Home from "./components/Pages/Home";
+import ContactUs from "./components/Pages/ContactUs";
 
 
 
@@ -34,6 +35,7 @@ function App() {
 
       <Route path="/home" element={<Home/>} />
       <Route path="/about" element={<About />} />
+      <Route path="/contact" element={< ContactUs/>} />
       <Route path="/" element={<AvailableProducts/>} />
         </Routes>
 
