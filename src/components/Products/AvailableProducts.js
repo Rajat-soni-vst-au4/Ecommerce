@@ -14,7 +14,7 @@ const ctx = useContext(CartContext);
 
   const btnClickHandler=(item)=>{
     ctx.addItem({
-      id: item.title, // pass the item's id instead of generating a new one
+      id: item.id, // pass the item's id instead of generating a new one
       name: item.title,
       price: item.price,
       image : item.imageUrl,
@@ -30,8 +30,8 @@ const ctx = useContext(CartContext);
         {productsArr.map((item) => (
             <Col key={item.id} md={6} lg={6} xl={3} className="mb-4">
               <Card className="shadow-lg">
-                <Link to={`//${item.id}`}>
-                  <Card.Img variant="top" src={item.imageUrl} alt={item.title} />
+              <Link to={`/product/${encodeURIComponent(item.imageUrl)}`}>
+              <Card.Img variant="top" src={item.imageUrl} alt={item.title} />
                 </Link>
                 <Card.Body>
                   <Card.Title>{item.title}</Card.Title>

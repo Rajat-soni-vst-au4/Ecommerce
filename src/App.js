@@ -12,6 +12,7 @@ import CartProvider from "./components/Store/CartProvider";
 import About from "./components/Pages/About";
 import Home from "./components/Pages/Home";
 import ContactUs from "./components/Pages/ContactUs";
+import ProductDetails from "./components/Products/ProductsDetails";
 
 
 
@@ -33,10 +34,12 @@ function App() {
       <Header onShowCart={showCartHandler}/>
       <Routes>
 
-      <Route path="/home" element={<Home/>} />
+      
+      <Route path="/" element={<Home/>} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={< ContactUs/>} />
-      <Route path="/" element={<AvailableProducts/>} />
+      <Route path="/product" element={<AvailableProducts/>} />
+      <Route path="/product/:imageUrl" element={<ProductDetails/>}/>
         </Routes>
 
 
